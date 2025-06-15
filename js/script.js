@@ -51,29 +51,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Função para mostrar o número animado ao clicar
 function mostrarNumeroAnimado(valor, x, y) {
+    const container = document.createElement('span');
+    container.style.position = 'absolute';
+    container.style.left = `${x}px`;
+    container.style.top = `${y}px`;
+    container.style.display = 'flex';
+    container.style.alignItems = 'center';
+    container.style.fontSize = '2rem';
+    container.style.fontWeight = 'bold';
+    container.style.color = '#8f00ff';
+    container.style.pointerEvents = 'none';
+    container.style.userSelect = 'none';
+    container.style.zIndex = 1000;
+    container.style.transition = 'all 1s ease';
+    container.style.opacity = 1;
+
     const numero = document.createElement('span');
     numero.textContent = `+${valor}`;
-    numero.style.position = 'absolute';
-    numero.style.left = `${x}px`;
-    numero.style.top = `${y}px`;
-    numero.style.fontSize = '2rem';
-    numero.style.fontWeight = 'bold';
-    numero.style.color = '#8f00ff';
-    numero.style.pointerEvents = 'none';
-    numero.style.userSelect = 'none';
-    numero.style.zIndex = 1000;
-    numero.style.transition = 'all 1s ease';
-    numero.style.opacity = 1;
 
-    document.body.appendChild(numero);
+    const img = document.createElement('img');
+    img.src = 'https://github.com/gui-bt/CryptPointClicker/blob/main/img/coin.png?raw=true';
+    img.alt = 'Moeda';
+    img.style.width = '28px';
+    img.style.height = '28px';
+    img.style.marginLeft = '8px';
+
+    container.appendChild(numero);
+    container.appendChild(img);
+    document.body.appendChild(container);
 
     setTimeout(() => {
-        numero.style.top = `${y - 60}px`;
-        numero.style.opacity = 0;
+        container.style.top = `${y - 60}px`;
+        container.style.opacity = 0;
     }, 10);
 
     setTimeout(() => {
-        numero.remove();
+        container.remove();
     }, 1000);
 }
 
