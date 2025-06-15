@@ -37,8 +37,8 @@ body {
     /*Ativa o Flexbox*/
     align-items: center;
     justify-content: space-between;
-    margin: 10px auto;
-    /*Centraliza o card no centro da tela e na margin tanto em cima como em baixo recebe 20px*/
+    margin: 40px auto;
+    /*Centraliza o card no centro da tela e na margin tanto em cima como em baixo recebe 40px*/
 
 }
 
