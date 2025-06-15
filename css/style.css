@@ -37,7 +37,7 @@ body {
     /*Ativa o Flexbox*/
     align-items: center;
     justify-content: space-between;
-    margin: 20px auto;
+    margin: 10px auto;
     /*Centraliza o card no centro da tela e na margin tanto em cima como em baixo recebe 20px*/
 
 }
@@ -100,7 +100,7 @@ body {
     padding: 20px;
     position: absolute;
     /*Faz com que o card apareça de forma absoluta aos demais*/
-    top: 50px;
+    top: 40px;
     /*Move o card do top da tela*/
     right: 30px;
     /*Move o card do lado direita da tela*/
@@ -131,6 +131,7 @@ body {
     padding: 10px; /* Adiciona padding interno */
     border-radius: 5px; /* Arredonda os cantos do fundo */
     display: inline-block; /* Faz o fundo contornar exatamente o texto */
+    font-size: small !important;
 }
 
 #numero_upgrades {
@@ -138,6 +139,25 @@ body {
     background-color: #000000;
     border-radius: 5px; /* Arredonda os cantos do fundo */
     color: #fc4dd6 !important;
+    margin-bottom: 0px !important;
+    font-size: small;
+}
+
+#valor_base {
+    color: #fc4dd6 !important;
+    background-color: #000000;
+    padding: 10px; /* Adiciona padding interno */
+    border-radius: 5px; /* Arredonda os cantos do fundo */
+    display: inline-block; /* Faz o fundo contornar exatamente o texto */
+    font-size: small !important;
+}
+
+#valor_clique {
+    padding: 10px 130px;
+    background-color: #000000;
+    border-radius: 5px; /* Arredonda os cantos do fundo */
+    color: #fc4dd6 !important;
+    font-size: small;
 }
 
 
@@ -153,11 +173,11 @@ body {
 
 footer {
 text-align: center;
-padding: 20px;
+padding: 15px;
 color: #ccc;
-font-size: 10px;
+font-size: 8px;
 background-color: rgba(25, 19, 44, 0.8);
-margin-top: 50px;
+margin-top: 135px;
 /*Espaçamento acima do footer de 50px separando ele dos demais conteúdos da página*/
 
 }
