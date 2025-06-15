@@ -85,11 +85,12 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s;
-
-    #imagemDoJogo:active {
-    transform: scale(1.1);
 }
 
+#imagemDoJogo:hover {
+    transform: scale(1.05);
+
+}
 
 #upgrade {
     background-color: rgba(60, 0, 80, 0.9);
@@ -145,5 +146,3 @@ margin-top: 50px;
 /*Espaçamento acima do footer de 50px separando ele dos demais conteúdos da página*/
 
 }
-
-
