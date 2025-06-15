@@ -85,12 +85,11 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s;
+
+    #imagemDoJogo:active {
+    transform: scale(1.1);
 }
 
-#imagemDoJogo:hover {
-    transform: scale(1.05);
-
-}
 
 #upgrade {
     background-color: rgba(60, 0, 80, 0.9);
