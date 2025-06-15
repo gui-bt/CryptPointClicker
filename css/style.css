@@ -24,7 +24,6 @@ body {
 }
 
 #card_jogador {
-
     background-color: rgba(25, 19, 44, 0.9);
     /*Cor específica pesquisada pela imagem da cor*/
     border: 4px solid #8f00ff;
@@ -35,7 +34,37 @@ body {
     display: flex;
     /*Ativa o Flexbox*/
     align-items: center;
-    justify-content: space-betcentween;
-    margin: 20px auto
+    justify-content: space-between;
+    margin: 20px auto;
+    /*Centraliza o card no centro da tela e na margin tanto em cima como em baixo recebe 20px*/
+   
 }
 
+#jogador_img {
+width: 80px;
+height: 80px;
+/*Criando uma imagem quadrada*/
+border: 3px solid #f0f0f0;
+border-radius: 10px;
+}
+
+#nome_jogador {
+font-size: 18px;
+color: #fcd34d;
+
+}
+
+#pontuacao {
+font-size: 14px;
+color: #f0f0f0;
+}
+
+
+
+
+
+#clicker {
+
+
+
+}
