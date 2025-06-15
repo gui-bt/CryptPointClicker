@@ -101,17 +101,42 @@ body {
 #upgrade h2 {
     color: #fcd34d;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 #upgrade .condicao_urgrade {
     color: #d1d5db;
     font-size: 12px;
-
+   
 }
 
 #upgrade .ganho_upgrade {
     color: #4ade80;
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
+
+
+/*Área dos botões*/
+
+
+
+
+
+
+
+
+
+footer {
+text-align: center;
+padding: 20px;
+color: #ccc;
+font-size: 10px;
+background-color: rgba(25, 19, 44, 0.8);
+margin-top: 50px;
+/*Espaçamento acima do footer de 50px separando ele dos demais conteúdos da página*/
+
+}
+
+
