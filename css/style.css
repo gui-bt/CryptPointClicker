@@ -12,7 +12,7 @@ body {
     /*Fonte do google fonts: tipo estilo ciberpunk com poucos pixels*/
     /*  "@import url('');" pode ser usado também para importar pelo CSS*/
 
-    background-image: url('../img/background.gif');
+    background-image: url('https://github.com/gui-bt/CryptPointClicker/blob/main/img/background.gif?raw=true');
     /*Plano de fundo da página*/
     background-size: cover;
     /*Melhor ajuste para plano de fundo para cortar a imagem sem distorcer se ajustando de acordo com os pixs*/
