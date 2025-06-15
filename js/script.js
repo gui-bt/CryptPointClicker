@@ -19,19 +19,6 @@ function atualizarPontosPorClique() {
     }
 }
 
-function atualizarDinheiroNaTela() {
-    let dinheiroDiv = document.getElementById('dinheiro');
-    if (!dinheiroDiv) {
-        dinheiroDiv = document.createElement('div');
-        dinheiroDiv.id = 'dinheiro';
-        dinheiroDiv.style.color = '#fff';
-        dinheiroDiv.style.fontSize = '1.2rem';
-        dinheiroDiv.style.margin = '10px';
-        document.body.prepend(dinheiroDiv);
-    }
-    dinheiroDiv.textContent = `Dinheiro: $${dinheiro}`;
-}
-
 // Função para comprar upgrade
 function comprarUpgrade() {
     let custo = 10 * (upgradeLevel + 1); // Exemplo de custo progressivo
