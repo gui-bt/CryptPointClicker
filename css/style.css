@@ -11,11 +11,31 @@ body {
     /*Fonte do google fonts: tipo estilo ciberpunk com poucos pixels*/
     /*  "@import url('');" pode ser usado também para importar pelo CSS*/
 
-    background-image: url('/img/background.gif');
+    background-image: url('../img/background.gif');
     /*Plano de fundo da página*/
     background-size: cover;
     /*Melhor ajuste para plano de fundo para cortar a imagem sem distorcer se ajustando de acordo com os pixs*/
+    background-repeat: no-repeat;
     background-position: center;
     color: #f0f0f0;
+    height: 100vh;
+    width: 100vw;
+    /* "overflow: hidden;" caso queira remover a barra de rolagem*/
+}
+
+#card_jogador {
+
+    background-color: rgba(25, 19, 44, 0.9);
+    /*Cor específica pesquisada pela imagem da cor*/
+    border: 4px solid #8f00ff;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    padding: 15px;
+    display: flex;
+    /*Ativa o Flexbox*/
+    align-items: center;
+    justify-content: space-betcentween;
+    margin: 20px auto
 }
 
