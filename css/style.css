@@ -51,6 +51,7 @@ body {
     background-image: url('https://github.com/gui-bt/CryptPointClicker/blob/main/img/player.png?raw=true');
     background-size: cover;
     background-position: center;
+}
 
 #nome_jogador {
     font-size: 18px;
