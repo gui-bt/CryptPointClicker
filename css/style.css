@@ -135,7 +135,7 @@ body {
 }
 
 #numero_upgrades {
-    padding: 10px 130px;
+    padding: 15px 10px 5px 10px;
     background-color: #000000;
     border-radius: 5px; /* Arredonda os cantos do fundo */
     color: #fc4dd6 !important;
@@ -153,7 +153,7 @@ body {
 }
 
 #valor_clique {
-    padding: 10px 130px;
+    padding: 15px 10px 5px 10px;
     background-color: #000000;
     border-radius: 5px; /* Arredonda os cantos do fundo */
     color: #fc4dd6 !important;
