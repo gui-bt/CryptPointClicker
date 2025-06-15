@@ -127,6 +127,17 @@ body {
 
 #qtdade_upgrades {
     color: #fc4dd6 !important;
+    background-color: #000000;
+    padding: 10px; /* Adiciona padding interno */
+    border-radius: 5px; /* Arredonda os cantos do fundo */
+    display: inline-block; /* Faz o fundo contornar exatamente o texto */
+}
+
+#numero_upgrades {
+    padding: 10px 130px;
+    background-color: #000000;
+    border-radius: 5px; /* Arredonda os cantos do fundo */
+    color: #fc4dd6 !important;
 }
 
 
