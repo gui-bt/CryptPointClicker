@@ -155,6 +155,9 @@ function clickBotao() {
     if (pontuacao >= 500) {
         alert('Pontuação máxima de 500 atingida! Reiniciando jogo...');
         pontuacao = 0; // Reinicia a pontuação
+        upgradeLevel = 0; // Reinicia o nível de upgrade
+        pontosPorClique = 1; // Reinicia o valor de cada clique
+        atualizarValorCliqueNaTela(); // Atualiza a tela com o novo valor de clique
     }
 
     cliques++;
