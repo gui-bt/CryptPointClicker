@@ -7,6 +7,7 @@ let upgradeLevel = 0;
 let pontosPorClique = 1;
 let dinheiro = 0;
 
+
 function atualizarPontosPorClique() {
     if (upgradeLevel === 0) {
         pontosPorClique = 1;
@@ -90,19 +91,6 @@ function mostrarNumeroAnimado(valor, x, y) {
     }, 1000);
 }
 
-// Clique na imagem do inimigo
-document.addEventListener('DOMContentLoaded', function() {
-    const img = document.getElementById('imagemDoJogo');
-    img.addEventListener('click', function(e) {
-        // Centraliza o número no centro da imagem
-        const rect = img.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
-        mostrarNumeroAnimado(pontosPorClique, x, y);
-
-        // Aqui você pode adicionar a lógica para somar pontos, etc.
-    });
-});
 
 document.getElementById("imagemDoJogo").addEventListener("click", clickBotao);
 
@@ -120,29 +108,6 @@ function clickBotao() {
     }
 }
 
-
-function comprarUpgrade(upg) {
-    let custo;
-    
-    if (upg === 1) {
-        custo = 10;
-    } else if (upg === 2) {
-        custo = 50;
-    } else if (upg === 3) {
-        custo = 100;
-    } else {
-        alert("Upgrade inválido!");
-        return; // Sai da função se o upgrade for inválido
-    }
-    
-    if (pontuacao >= custo) {
-        pontuacao -= custo;
-        upgradeAtivo = upg;
-        document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
-    } else {
-        alert("Você não tem pontos suficientes!");
-    }
-}
 
 function trocarImagem() { 
     const img = document.getElementById("imagemDoJogo");

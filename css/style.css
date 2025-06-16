@@ -78,13 +78,16 @@ body {
     border-radius: 50%;
     /*Transforma o elemento em uma forma circular desde que ele tenham a mesma altura e largura*/
     background-color: rgba(25, 19, 44, 0.8);
-    background-image: url(https://github.com/gui-bt/CryptPointClicker/blob/main/img/inimigo1.png?raw=true);
     background-size: 70% 75%; /* Diminui a imagem para caber melhor no círculo */
     background-position: center center; /* Centraliza a imagem no círculo */
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s;
+}
+
+#imagemDoJogo {
+    transition: opacity 0.3s;
 }
 
 #imagemDoJogo:hover {
