@@ -8,6 +8,11 @@ let pontosPorClique = 1;
 let dinheiro = 0;
 
 
+function atualizarValorCliqueNaTela() {
+    document.getElementById("valor_clique").textContent = pontosPorClique;
+}
+
+
 function atualizarPontosPorClique() {
     if (upgradeLevel === 0) {
         pontosPorClique = 1;
@@ -18,7 +23,9 @@ function atualizarPontosPorClique() {
     } else if (upgradeLevel === 4) {
         pontosPorClique = 32;
     }
+
 }
+
 
 // Função para comprar upgrade
 function comprarUpgrade() {
@@ -28,6 +35,7 @@ function comprarUpgrade() {
         upgradeLevel++;
         atualizarPontosPorClique();
         atualizarDinheiroNaTela();
+        atualizarValorCliqueNaTela(); 
         alert('Upgrade comprado! Nível atual: ' + upgradeLevel);
     } else if (upgradeLevel >= 4) {
         alert('Você já atingiu o nível máximo de upgrade!');
@@ -35,6 +43,49 @@ function comprarUpgrade() {
         alert('Dinheiro insuficiente para upgrade!');
     }
 }
+
+document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
+    upgrade.addEventListener('click', () => {
+        let custo;
+        switch (index) {
+            case 0: // Bobby
+                custo = 10;
+                if (pontuacao >= custo) {
+                    pontuacao -= custo;
+                    pontosPorClique += 1;
+                    atualizarValorCliqueNaTela(); 
+                    alert('Bobby liberado! Aumento de clique: +1');
+                } else {
+                    alert('Pontos insuficientes para liberar Bobby!');
+                }
+                break;
+            case 1: // Doge
+                custo = 50;
+                if (pontuacao >= custo) {
+                    pontuacao -= custo;
+                    pontosPorClique += 8;
+                    atualizarValorCliqueNaTela(); 
+                    alert('Doge liberado! Aumento de clique: +8');
+                } else {
+                    alert('Pontos insuficientes para liberar Doge!');
+                }
+                break;
+            case 2: // Erebro
+                custo = 100;
+                if (pontuacao >= custo) {
+                    pontuacao -= custo;
+                    pontosPorClique += 32;
+                    atualizarValorCliqueNaTela(); 
+                    alert('Erebro liberado! Aumento de clique: +32');
+                } else {
+                    alert('Pontos insuficientes para liberar Erebro!');
+                }
+                break;
+        }
+        document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
+    });
+});
+
 
 // Clique na imagem do inimigo
 document.addEventListener('DOMContentLoaded', function() {
@@ -99,7 +150,12 @@ document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
 
 function clickBotao() {
     pontuacao += pontosPorClique;
-     document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
+    document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
+
+    if (pontuacao >= 500) {
+        alert('Pontuação máxima de 500 atingida! Reiniciando jogo...');
+        pontuacao = 0; // Reinicia a pontuação
+    }
 
     cliques++;
     console.log(cliques);
