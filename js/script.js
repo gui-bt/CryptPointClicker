@@ -7,6 +7,10 @@ let pontosPorClique = 1;
 let dinheiro = 0;
 let numeroUpgrades = 1;
 
+let upgrade1 = false;
+let upgrade2 = false;
+let upgrade3 = false;
+
 function atualizarValorCliqueNaTela() {
     document.getElementById("valor_clique").textContent = pontosPorClique;
 }
@@ -40,41 +44,45 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
         }
         
         let custo;
+
         switch (index) {
             case 0: // Bobby
                 custo = 10;
-                if (pontuacao >= custo) {
+                if (pontuacao >= custo && upgrade1== false) {
                     pontuacao -= custo;
                     pontosPorClique += 1;
                     upgradeLevel = 2;
+                    upgrade1 = true;
                     atualizarValorCliqueNaTela();
                     alert('Bobby liberado! Aumento de clique: +1');
                 } else {
-                    alert('Pontos insuficientes para liberar Bobby!');
+                    alert('Não é possível liberar Bobby!');
                 }
                 break;
             case 1: // Doge
                 custo = 50;
-                if (pontuacao >= custo) {
+                if (pontuacao >= custo && upgrade2== false) {
                     pontuacao -= custo;
                     pontosPorClique += 8;
                     upgradeLevel = 3;
+                    upgrade2 = true;
                     atualizarValorCliqueNaTela();
                     alert('Doge liberado! Aumento de clique: +8');
                 } else {
-                    alert('Pontos insuficientes para liberar Doge!');
+                    alert('Não é possível liberar Doge!');
                 }
                 break;
             case 2: // Erebro
                 custo = 100;
-                if (pontuacao >= custo) {
+                if (pontuacao >= custo && upgrade3 == false) {
                     pontuacao -= custo;
                     pontosPorClique += 32;
                     upgradeLevel = 4;
+                    upgrade3 = true;
                     atualizarValorCliqueNaTela();
                     alert('Erebro liberado! Aumento de clique: +32');
                 } else {
-                    alert('Pontos insuficientes para liberar Erebro!');
+                    alert('Não é possível para liberar Erebro!');
                 }
                 break;
         }
