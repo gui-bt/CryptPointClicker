@@ -25,6 +25,7 @@ body {
     /* "overflow: hidden;" caso queira remover a barra de rolagem*/
 }
 
+
 #card_jogador {
     background-color: rgba(25, 19, 44, 0.9);
     /*Cor específica pesquisada pela imagem da cor*/
@@ -53,6 +54,17 @@ body {
     background-position: center;
 }
 
+#upgrade img {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #e100ff;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
 #nome_jogador {
     font-size: 18px;
     color: #fcd34d;
@@ -78,8 +90,10 @@ body {
     border-radius: 50%;
     /*Transforma o elemento em uma forma circular desde que ele tenham a mesma altura e largura*/
     background-color: rgba(25, 19, 44, 0.8);
-    background-size: 70% 75%; /* Diminui a imagem para caber melhor no círculo */
-    background-position: center center; /* Centraliza a imagem no círculo */
+    background-size: 70% 75%;
+    /* Diminui a imagem para caber melhor no círculo */
+    background-position: center center;
+    /* Centraliza a imagem no círculo */
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
@@ -110,6 +124,7 @@ body {
 }
 
 #upgrade h2 {
+    cursor: pointer;
     color: #fcd34d;
     font-size: 16px;
     margin-bottom: 20px;
@@ -118,7 +133,7 @@ body {
 #upgrade .condicao_urgrade {
     color: #d1d5db;
     font-size: 12px;
-   
+
 }
 
 #upgrade .ganho_upgrade {
@@ -131,17 +146,22 @@ body {
 #qtdade_upgrades {
     color: #fc4dd6 !important;
     background-color: #000000;
-    padding: 10px; /* Adiciona padding interno */
-    border-radius: 5px; /* Arredonda os cantos do fundo */
-    display: inline-block; /* Faz o fundo contornar exatamente o texto */
+    padding: 10px;
+    /* Adiciona padding interno */
+    border-radius: 5px;
+    /* Arredonda os cantos do fundo */
+    display: inline-block;
+    /* Faz o fundo contornar exatamente o texto */
     font-size: small !important;
 }
 
 #numero_upgrades {
-    display: inline-block; /* Faz o span se comportar como bloco */
+    display: inline-block;
+    /* Faz o span se comportar como bloco */
     padding: 15px 10px 5px 10px;
     background-color: #000000;
-    border-radius: 5px; /* Arredonda os cantos do fundo */
+    border-radius: 5px;
+    /* Arredonda os cantos do fundo */
     color: #fc4dd6 !important;
     margin-bottom: 0px !important;
     font-size: small;
@@ -157,7 +177,8 @@ body {
 }
 
 #valor_clique {
-    display: inline-block; /* Faz o span se comportar como bloco */
+    display: inline-block;
+    /* Faz o span se comportar como bloco */
     padding: 15px 10px 5px 10px;
     background-color: #000000;
     border-radius: 5px;
@@ -171,19 +192,15 @@ body {
 
 
 
-
-
-
-
-
-
 footer {
-text-align: center;
-padding: 15px;
-color: #ccc;
-font-size: 8px;
-background-color: rgba(25, 19, 44, 0.8);
-margin-top: 135px;
-/*Espaçamento acima do footer de 50px separando ele dos demais conteúdos da página*/
+      position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
+    text-align: center;
+    padding: 15px;
+    color: #ccc;
+    font-size: 8px;
+    background-color: rgba(25, 19, 44, 0.8);
 }
