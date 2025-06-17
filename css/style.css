@@ -138,6 +138,7 @@ body {
 }
 
 #numero_upgrades {
+    display: inline-block; /* Faz o span se comportar como bloco */
     padding: 15px 10px 5px 10px;
     background-color: #000000;
     border-radius: 5px; /* Arredonda os cantos do fundo */
@@ -149,19 +150,21 @@ body {
 #valor_base {
     color: #fc4dd6 !important;
     background-color: #000000;
-    padding: 10px; /* Adiciona padding interno */
-    border-radius: 5px; /* Arredonda os cantos do fundo */
-    display: inline-block; /* Faz o fundo contornar exatamente o texto */
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
     font-size: small !important;
 }
 
 #valor_clique {
+    display: inline-block; /* Faz o span se comportar como bloco */
     padding: 15px 10px 5px 10px;
     background-color: #000000;
-    border-radius: 5px; /* Arredonda os cantos do fundo */
+    border-radius: 5px;
     color: #fc4dd6 !important;
     font-size: small;
 }
+
 
 
 /*Área dos botões*/
