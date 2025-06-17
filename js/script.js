@@ -23,7 +23,6 @@ function atualizarPontosPorClique() {
     } else if (upgradeLevel === 4) {
         pontosPorClique = 32;
     }
-    atualizarUpgradeNaTela();
 }
 
 function atualizarUpgradeNaTela() {
@@ -37,13 +36,13 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
             alert('Você não pode comprar mais upgrades, nível máximo atingido!');
             return;
         }
-        
+
         let custo;
 
         switch (index) {
             case 0: // Bobby
                 custo = 10;
-                if (pontuacao >= custo && upgrade1== false) {
+                if (pontuacao >= custo && upgrade1 == false) {
                     pontuacao -= custo;
                     pontosPorClique += 1;
                     upgradeLevel = 2;
@@ -56,7 +55,7 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                 break;
             case 1: // Doge
                 custo = 50;
-                if (pontuacao >= custo && upgrade2== false) {
+                if (pontuacao >= custo && upgrade2 == false) {
                     pontuacao -= custo;
                     pontosPorClique += 8;
                     upgradeLevel = 3;
@@ -86,9 +85,9 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const img = document.getElementById('imagemDoJogo');
-    img.addEventListener('click', function(e) {
+    img.addEventListener('click', function (e) {
         const rect = img.getBoundingClientRect();
         const x = rect.left + rect.width / 2;
         const y = rect.top + rect.height / 2;
@@ -162,7 +161,7 @@ function clickBotao() {
     }
 }
 
-function trocarImagem() { 
+function trocarImagem() {
     const img = document.getElementById("imagemDoJogo");
     if (imagemAtual === 1) {
         img.src = "img/inimigo2.png";
