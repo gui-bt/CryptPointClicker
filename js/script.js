@@ -1,57 +1,44 @@
 let pontuacao = 0;
 let upgradeAtivo = 0;
 let cliques = 0;
-//Guilherme
 let imagemAtual = 1;
-//Imagem sempre começa por 1
-//Guilherme
-let upgradeLevel = 0;
+let upgradeLevel = 1;
 let pontosPorClique = 1;
 let dinheiro = 0;
-
+let numeroUpgrades = 1;
 
 function atualizarValorCliqueNaTela() {
     document.getElementById("valor_clique").textContent = pontosPorClique;
 }
 
-//Guilherme
-//Função puxa a variavel upgradeLevel que começa com 0, de acordo com o upgrade aumenta os pontos
 function atualizarPontosPorClique() {
-    if (upgradeLevel === 0) {
+    if (upgradeLevel === 1) {
         pontosPorClique = 1;
-        document.getElementById("qtdade_upgrades").innerText = "Quantidade de upgrades comprados: 0 Upgrades";
     } else if (upgradeLevel === 2) {
         pontosPorClique = 2;
-        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 1 Upgrades";
     } else if (upgradeLevel === 3) {
         pontosPorClique = 8;
-        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 2 Upgrades";
     } else if (upgradeLevel === 4) {
         pontosPorClique = 32;
-        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 3 Upgrades";
     }
+    atualizarUpgradeNaTela();
 }
 
+function atualizarUpgradeNaTela() {
+    document.getElementById("numero_upgrades").textContent = upgradeLevel;
+}
 
-// Função para comprar upgrade
-function comprarUpgrade() {
-    let custo = 10 * (upgradeLevel + 1); // Exemplo de custo progressivo
-    if (dinheiro >= custo && upgradeLevel < 4) {
-        dinheiro -= custo;
-        upgradeLevel++;
-        atualizarPontosPorClique();
-        atualizarDinheiroNaTela();
-        atualizarValorCliqueNaTela(); 
-        alert('Upgrade comprado! Nível atual: ' + upgradeLevel);
-    } else if (upgradeLevel >= 4) {
-        alert('Você já atingiu o nível máximo de upgrade!');
-    } else {
-        alert('Dinheiro insuficiente para upgrade!');
-    }
+function atualizarUpgrade() {
+    numeroUpgrades = upgradeLevel;
 }
 
 document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
     upgrade.addEventListener('click', () => {
+        if (upgradeLevel >= 4) {
+            alert('Você não pode comprar mais upgrades, nível máximo atingido!');
+            return;
+        }
+        
         let custo;
         switch (index) {
             case 0: // Bobby
@@ -59,8 +46,8 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                 if (pontuacao >= custo) {
                     pontuacao -= custo;
                     pontosPorClique += 1;
-                    atualizarValorCliqueNaTela(); 
-                    comprarUpgrade();
+                    upgradeLevel = 2;
+                    atualizarValorCliqueNaTela();
                     alert('Bobby liberado! Aumento de clique: +1');
                 } else {
                     alert('Pontos insuficientes para liberar Bobby!');
@@ -71,7 +58,8 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                 if (pontuacao >= custo) {
                     pontuacao -= custo;
                     pontosPorClique += 8;
-                    atualizarValorCliqueNaTela(); 
+                    upgradeLevel = 3;
+                    atualizarValorCliqueNaTela();
                     alert('Doge liberado! Aumento de clique: +8');
                 } else {
                     alert('Pontos insuficientes para liberar Doge!');
@@ -82,7 +70,8 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                 if (pontuacao >= custo) {
                     pontuacao -= custo;
                     pontosPorClique += 32;
-                    atualizarValorCliqueNaTela(); 
+                    upgradeLevel = 4;
+                    atualizarValorCliqueNaTela();
                     alert('Erebro liberado! Aumento de clique: +32');
                 } else {
                     alert('Pontos insuficientes para liberar Erebro!');
@@ -90,11 +79,10 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                 break;
         }
         document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
+        atualizarUpgradeNaTela();
     });
 });
 
-
-// Clique na imagem do inimigo
 document.addEventListener('DOMContentLoaded', function() {
     const img = document.getElementById('imagemDoJogo');
     img.addEventListener('click', function(e) {
@@ -108,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
     atualizarDinheiroNaTela();
 });
 
-// Função para mostrar o número animado ao clicar
 function mostrarNumeroAnimado(valor, x, y) {
     const container = document.createElement('span');
     container.style.position = 'absolute';
@@ -149,11 +136,9 @@ function mostrarNumeroAnimado(valor, x, y) {
     }, 1000);
 }
 
-
 document.getElementById("imagemDoJogo").addEventListener("click", clickBotao);
 
 document.getElementById("pontuacao").textContent = `Pontuação: ${pontuacao}`;
-
 
 function clickBotao() {
     pontuacao += pontosPorClique;
@@ -161,38 +146,28 @@ function clickBotao() {
 
     if (pontuacao >= 500) {
         alert('Pontuação máxima de 500 atingida! Reiniciando jogo...');
-        pontuacao = 0; // Reinicia a pontuação
-        upgradeLevel = 0; // Reinicia o nível de upgrade
-        pontosPorClique = 1; // Reinicia o valor de cada clique
-        atualizarValorCliqueNaTela(); // Atualiza a tela com o novo valor de clique
+        pontuacao = 0;
+        upgradeLevel = 0;
+        pontosPorClique = 1;
+        atualizarValorCliqueNaTela();
+        atualizarUpgradeNaTela();
     }
 
-    //Guilherme
-    //Função chama o trocar imagem
     cliques++;
-    console.log(cliques);
     if (cliques % 15 === 0 && cliques !== 0) {
         trocarImagem();
     }
 }
 
-
-//Guilherme
 function trocarImagem() { 
-    //Costante img armazena a imagem do jogo, pega o elemento pelo Id chamado "imagemDoJogo"
     const img = document.getElementById("imagemDoJogo");
-    
-    //Comparação com três ===, == não verifica o tipo, === verifica o tipo
     if (imagemAtual === 1) {
-        //muda o source da imagem para a imagem 2 se for 1
         img.src = "img/inimigo2.png";
         imagemAtual = 2;
     } else if (imagemAtual === 2) {
-        //muda o source da imagem para a imagem 3 se for 1
         img.src = "img/inimigo3.png";
         imagemAtual = 3;
     } else {
-        //muda o source da imagem para a imagem 1 se não for 1 ou 2, logo 3
         img.src = "img/inimigo1.png";
         imagemAtual = 1;
     }
