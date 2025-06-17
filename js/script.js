@@ -1,8 +1,10 @@
 let pontuacao = 0;
 let upgradeAtivo = 0;
 let cliques = 0;
+//Guilherme
 let imagemAtual = 1;
-
+//Imagem sempre começa por 1
+//Guilherme
 let upgradeLevel = 0;
 let pontosPorClique = 1;
 let dinheiro = 0;
@@ -12,7 +14,8 @@ function atualizarValorCliqueNaTela() {
     document.getElementById("valor_clique").textContent = pontosPorClique;
 }
 
-
+//Guilherme
+//Função puxa a variavel upgradeLevel que começa com 0, de acordo com o upgrade aumenta os pontos
 function atualizarPontosPorClique() {
     if (upgradeLevel === 0) {
         pontosPorClique = 1;
@@ -160,6 +163,8 @@ function clickBotao() {
         atualizarValorCliqueNaTela(); // Atualiza a tela com o novo valor de clique
     }
 
+    //Guilherme
+    //Função chama o trocar imagem
     cliques++;
     console.log(cliques);
     if (cliques % 15 === 0 && cliques !== 0) {
@@ -168,16 +173,22 @@ function clickBotao() {
 }
 
 
+//Guilherme
 function trocarImagem() { 
+    //Costante img armazena a imagem do jogo, pega o elemento pelo Id chamado "imagemDoJogo"
     const img = document.getElementById("imagemDoJogo");
     
+    //Comparação com três ===, == não verifica o tipo, === verifica o tipo
     if (imagemAtual === 1) {
+        //muda o source da imagem para a imagem 2 se for 1
         img.src = "img/inimigo2.png";
         imagemAtual = 2;
     } else if (imagemAtual === 2) {
+        //muda o source da imagem para a imagem 3 se for 1
         img.src = "img/inimigo3.png";
         imagemAtual = 3;
     } else {
+        //muda o source da imagem para a imagem 1 se não for 1 ou 2, logo 3
         img.src = "img/inimigo1.png";
         imagemAtual = 1;
     }
