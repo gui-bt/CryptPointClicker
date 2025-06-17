@@ -19,14 +19,17 @@ function atualizarValorCliqueNaTela() {
 function atualizarPontosPorClique() {
     if (upgradeLevel === 0) {
         pontosPorClique = 1;
+        document.getElementById("qtdade_upgrades").innerText = "Quantidade de upgrades comprados: 0 Upgrades";
     } else if (upgradeLevel === 2) {
         pontosPorClique = 2;
+        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 1 Upgrades";
     } else if (upgradeLevel === 3) {
         pontosPorClique = 8;
+        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 2 Upgrades";
     } else if (upgradeLevel === 4) {
         pontosPorClique = 32;
+        document.getElementById("qtdade_upgrades").textContent = "Quantidade de upgrades comprados: 3 Upgrades";
     }
-
 }
 
 
@@ -57,6 +60,7 @@ document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
                     pontuacao -= custo;
                     pontosPorClique += 1;
                     atualizarValorCliqueNaTela(); 
+                    comprarUpgrade();
                     alert('Bobby liberado! Aumento de clique: +1');
                 } else {
                     alert('Pontos insuficientes para liberar Bobby!');
