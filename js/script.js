@@ -1,11 +1,9 @@
 let pontuacao = 0;
-let upgradeAtivo = 0;
 let cliques = 0;
 let imagemAtual = 1;
 let upgradeLevel = 1;
 let pontosPorClique = 1;
 let dinheiro = 0;
-let numeroUpgrades = 1;
 
 let upgrade1 = false;
 let upgrade2 = false;
@@ -32,9 +30,6 @@ function atualizarUpgradeNaTela() {
     document.getElementById("numero_upgrades").textContent = upgradeLevel;
 }
 
-function atualizarUpgrade() {
-    numeroUpgrades = upgradeLevel;
-}
 
 document.querySelectorAll('.nome_upgrade').forEach((upgrade, index) => {
     upgrade.addEventListener('click', () => {
