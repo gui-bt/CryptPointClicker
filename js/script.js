@@ -13,17 +13,6 @@ function atualizarValorCliqueNaTela() {
     document.getElementById("valor_clique").textContent = pontosPorClique;
 }
 
-function atualizarPontosPorClique() {
-    if (upgradeLevel === 1) {
-        pontosPorClique = 1;
-    } else if (upgradeLevel === 2) {
-        pontosPorClique = 2;
-    } else if (upgradeLevel === 3) {
-        pontosPorClique = 8;
-    } else if (upgradeLevel === 4) {
-        pontosPorClique = 32;
-    }
-}
 
 function atualizarUpgradeNaTela() {
     document.getElementById("numero_upgrades").textContent = upgradeLevel;
@@ -149,7 +138,7 @@ function clickBotao() {
     if (pontuacao >= 500) {
         alert('Pontuação máxima de 500 atingida! Reiniciando jogo...');
         pontuacao = 0;
-        upgradeLevel = 0;
+        upgradeLevel = 1;
         pontosPorClique = 1;
         atualizarValorCliqueNaTela();
         atualizarUpgradeNaTela();
